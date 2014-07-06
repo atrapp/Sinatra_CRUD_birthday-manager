@@ -11,5 +11,14 @@
     </form>
 
     <a href="/groups"><button type="button">All groups</button></a>
+
+    <% @group.people.each do |person| %>
+        <li>
+            <a href="/people/<%= person.id %>">
+                <%= person.name %>
+            </a>
+            <hr>
+        </li>
+    <% end %>
    
 </div>

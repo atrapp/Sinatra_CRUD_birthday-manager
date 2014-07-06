@@ -17,5 +17,14 @@
     </form>
 
     <a href="/countries"><button type="button">All countries</button></a>
+
+    <% @country.people.each do |person| %>
+        <li>
+            <a href="/people/<%= person.id %>">
+                <%= person.name %>
+            </a>
+            <hr>
+        </li>
+    <% end %>
    
 </div>
