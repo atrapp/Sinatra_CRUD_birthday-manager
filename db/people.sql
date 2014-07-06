@@ -15,9 +15,9 @@ CREATE TABLE people
   name varchar(255),
   gender varchar(1),
   date_of_birth varchar(10),  
-  image_url varchar(255),     # picture of person
-  country_id integer,     # country of birth
-  group_id integer     # family, friends, collegues, etc.
+  image_url varchar(255),
+  country_id integer,
+  group_id integer
 );
 
 CREATE TABLE countries
@@ -25,8 +25,8 @@ CREATE TABLE countries
   id serial4 PRIMARY KEY,
   name varchar(255),
   countrycode varchar(2),  
-  description varchar(1000),     # info about country, tradition, gift ideas, etc.
-  image_url varchar(255)     # picture of flag or landmark
+  description varchar(1000),
+  image_url varchar(255)
 );
 
 CREATE TABLE groups
