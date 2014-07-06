@@ -1,0 +1,20 @@
+<div>
+    
+    <h3><%= @person.name %></h3>
+
+    <h4>Gender: <%= @person.gender %></h4>
+    <h4>Date of Birth: <%= @person.date_of_birth %></h4>
+    <h4>Country: <%= @person.country.name %></h4>
+    <h4>Group: <%= @person.group.name %></h4>
+
+    <img src="<%= @person.image_url %>" />  
+    
+
+    <form action="/people/<%= @person.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">             
+        <button type="submit">Delete person</button>
+    </form>
+
+    <a href="/people"><button type="button">All people</button></a>
+   
+</div>

@@ -1,0 +1,16 @@
+<div>
+    
+    <a href="/people/new"><button type="submit">New person</button></a>  
+
+    <ul>
+        <% @people.each do |person| %>
+            <li>
+                <a href="/people/<%= person.id %>">
+                    <%= person.name %>
+                </a>
+                <hr>
+            </li>
+        <% end %>
+    </ul>
+
+</div>

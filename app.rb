@@ -19,18 +19,18 @@ end
 # *****   Routes for people *****
 
 # index
-get '/people'
+get '/people' do
   @people = Person.all
   erb :'people/index'  
 end
 
 # new
-get '/people/new'
+get '/people/new' do
   erb :'people/new'
 end
 
 # create
-post '/people'
+post '/people' do
   name = params[:name]
   gender = params[:gender]
   date_of_birth = params[:date_of_birth]
@@ -43,13 +43,13 @@ post '/people'
 end
 
 # edit
-get '/people/:id/edit'
+get '/people/:id/edit' do
   @person = Person.find(params[:id])
   erb :'people/edit'
 end
 
 # update
-put '/people/:id'
+put '/people/:id' do
   updated_person = Person.find(params[:id])
 
   updated_person.name = params[:name]
@@ -64,13 +64,13 @@ put '/people/:id'
 end
 
 # show
-get '/people/:id'
+get '/people/:id' do
   @person = Person.find(params[:id])
   erb :'people/show'
 end
 
 # delete
-delete '/people/:id'
+delete '/people/:id' do
   Person.delete(params[:id])
   redirect '/people'
 end
@@ -79,18 +79,18 @@ end
 # *****   Routes for countries *****
 
 # index
-get '/countries'
+get '/countries' do
   @countries = Country.all
   erb :'countries/index'
 end
 
 # new
-get '/countries/new'
+get '/countries/new' do
   erb :'countries/new'
 end
 
 # create
-post '/countries'
+post '/countries' do
   name = params[:name]
   countrycode = params[:countrycode]
   description = params[:description]
@@ -101,13 +101,13 @@ post '/countries'
 end
 
 # edit
-get '/countries/:id/edit'
+get '/countries/:id/edit' do
   @country = Country.find(params[:id])
   erb :'countries/edit'
 end
 
 # update
-put '/countries/:id'
+put '/countries/:id' do
   updated_country = Country.find(params[:id])
 
   updated_country.name = params[:name]
@@ -120,13 +120,13 @@ put '/countries/:id'
 end
 
 # show
-get '/countries/:id'
+get '/countries/:id' do
   @country = Country.find(params[:id])
   erb :'countries/show'
 end
 
 # delete
-delete '/countries/:id'
+delete '/countries/:id' do
   Country.delete(params[:id])
   redirect "/countries"
 end
@@ -135,18 +135,18 @@ end
 # *****   Routes for groups *****
 
 # index
-get '/groups'
+get '/groups' do
   @groups = Group.all
   erb :'groups/index'
 end
 
 # new
-get '/groups/new'
+get '/groups/new' do
   erb :'groups/new'
 end
 
 # create
-post '/groups'
+post '/groups' do
   name = params[:name]
 
   new_group = Group.create({name: name})
@@ -154,13 +154,13 @@ post '/groups'
 end
 
 # edit
-get '/groups/:id/edit'
+get '/groups/:id/edit' do
   @group = Group.find(params[:id])
   erb :'groups/edit'
 end
 
 # update
-put '/groups/:id'
+put '/groups/:id' do
   updated_group = Group.find(params[:id])
 
   updated_group.name = params[:name]
@@ -170,13 +170,13 @@ put '/groups/:id'
 end
 
 # show
-get '/groups/:id'
+get '/groups/:id' do
   @group = Group.find(params[:id])
   erb :'groups/show'
 end
 
 # delete
-delete '/groups/:id'
+delete '/groups/:id' do
   Group.delete(params[:id])
   redirect "/groups"
 end
