@@ -1,0 +1,12 @@
+<div>
+    
+    <h2>Edit group:</h2>
+
+    <form action="/groups/<%= @group.id %>" method='post'>
+      <input type="hidden" name="_method" value="put">  
+      <input type="text" name='name' value='<%= @group.name %>'>
+        
+      <input type="submit">
+    </form>
+
+</div>

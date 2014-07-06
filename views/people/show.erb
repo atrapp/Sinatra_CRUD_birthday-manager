@@ -10,6 +10,8 @@
     <img src="<%= @person.image_url %>" />  
     
 
+    <a href="/people/<%= @person.id %>/edit"><button type="button">Edit person</button></a>
+
     <form action="/people/<%= @person.id %>" method="post">
         <input type="hidden" name="_method" value="delete">             
         <button type="submit">Delete person</button>

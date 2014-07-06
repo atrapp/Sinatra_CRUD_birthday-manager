@@ -1,0 +1,15 @@
+<div>
+    
+    <h3><%= @group.name %></h3>
+
+    
+    <a href="/groups/<%= @group.id %>/edit"><button type="button">Edit group</button></a>
+
+    <form action="/groups/<%= @group.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">             
+        <button type="submit">Delete group</button>
+    </form>
+
+    <a href="/groups"><button type="button">All groups</button></a>
+   
+</div>

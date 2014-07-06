@@ -1,0 +1,15 @@
+<div>
+    
+    <h2>Edit country:</h2>
+
+    <form action="/countries/<%= @country.id %>" method='post'>
+      <input type="hidden" name="_method" value="put">  
+      <input type="text" name='name' value='<%= @country.name %>'>
+      <input type="text" name='countrycode' value='<%= @country.countrycode %>'>     
+      <input type="text" name='image_url' value='<%= @country.image_url %>'> 
+      <textarea rows="5" cols="50" name='description'><%= @country.description %></textarea>
+    
+      <input type="submit">
+    </form>
+
+</div>

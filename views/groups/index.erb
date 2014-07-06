@@ -1,0 +1,16 @@
+<div>
+    
+    <a href="/groups/new"><button type="submit">New group</button></a>  
+
+    <ul>
+        <% @groups.each do |group| %>
+            <li>
+                <a href="/groups/<%= group.id %>">
+                    <%= group.name %>
+                </a>
+                <hr>
+            </li>
+        <% end %>
+    </ul>
+
+</div>

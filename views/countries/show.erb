@@ -1,0 +1,21 @@
+<div>
+    
+    <h3><%= @country.name %></h3>
+
+    <h4>Country Code: <%= @country.countrycode %></h4>
+    <h4>Description:</h4>
+    <p><%= @country.description %></p>
+    
+    <img src="<%= @country.image_url %>" />  
+    
+
+    <a href="/countries/<%= @country.id %>/edit"><button type="button">Edit country</button></a>
+
+    <form action="/country/<%= @country.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">             
+        <button type="submit">Delete country</button>
+    </form>
+
+    <a href="/countries"><button type="button">All countries</button></a>
+   
+</div>
