@@ -26,6 +26,8 @@ end
 
 # new
 get '/people/new' do
+  @countries = Country.all
+  @groups = Group.all
   erb :'people/new'
 end
 
@@ -44,6 +46,8 @@ end
 
 # edit
 get '/people/:id/edit' do
+  @countries = Country.all 
+  @groups = Group.all
   @person = Person.find(params[:id])
   erb :'people/edit'
 end

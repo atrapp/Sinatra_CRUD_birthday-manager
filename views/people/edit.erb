@@ -10,15 +10,15 @@
       <input type="text" name='image_url' value='<%= @person.image_url %>'>
       
       <select name="country_id">          
-          <option value="1">England</option>
-          <option value="2">Germany</option>
-          <option value="3">USA</option>
+        <% @countries.each do |country| %>
+          <option value="<%= country.id %>" <%= "selected" if @person.country.id == country.id %>><%= country.name %></option>
+        <% end %> 
       </select> 
       
-       <select name="group_id">         
-          <option value="1">Friends</option>
-          <option value="2">Family</option>
-          <option value="3">Collegues</option>
+      <select name="group_id">
+        <% @groups.each do |group| %>
+          <option value="<%= group.id %>" <%= "selected" if @person.group.id == group.id %>><%= group.name %></option>
+        <% end %>
       </select> 
     
       <input type="submit">

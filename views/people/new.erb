@@ -7,17 +7,17 @@
       <input type="text" name='gender' placeholder='...gender'>
       <input type="text" name='date_of_birth' placeholder='...date of birth (mm/dd/yyyy)'>
       <input type="text" name='image_url' placeholder='...image url'>
-      
+
       <select name="country_id">          
-          <option value="1">England</option>
-          <option value="2">Germany</option>
-          <option value="3">USA</option>
+        <% @countries.each do |country| %>
+          <option value="<%= country.id %>"><%= country.name %></option>
+        <% end %> 
       </select> 
       
-       <select name="group_id">         
-          <option value="1">Friends</option>
-          <option value="2">Family</option>
-          <option value="3">Collegues</option>
+      <select name="group_id">
+        <% @groups.each do |group| %>
+          <option value="<%= group.id %>"><%= group.name %></option>
+        <% end %>
       </select> 
     
       <input type="submit">
